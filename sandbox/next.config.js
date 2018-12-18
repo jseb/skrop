@@ -12,6 +12,7 @@ const webpackConfig = {
     config.resolve.alias = {
       "../../theme.config$": path.join(__dirname, "skrop_theme/theme.config"),
       "ui-components": path.join(__dirname, "ui-components"),
+      models: path.join(__dirname, "models"),
       static: path.join(__dirname, "static")
     };
 

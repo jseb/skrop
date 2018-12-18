@@ -5,6 +5,7 @@ import SEO from "../next-seo.config";
 import PageMenu from "ui-components/menu/menu";
 import "../skrop_theme/semantic.less";
 import { string } from "prop-types";
+import Crop from "../models/crop";
 
 export default class SkropApp extends App {
   public static async getInitialProps({ Component, router, ctx }) {
@@ -49,6 +50,8 @@ export default class SkropApp extends App {
   }
 
   private selectImage = selectedImageUrl => {
-    this.setState({ selectedImageUrl });
+    const cropFilter = new Crop(1, 1, "");
+
+    this.setState({ selectedImageUrl, filters: [cropFilter] });
   };
 }
