@@ -1,19 +1,13 @@
 import React from "react";
-import { Grid, Header, Tab } from "semantic-ui-react";
+import { Grid, Header, Form } from "semantic-ui-react";
+import FilterProps from "./filter-props";
+import Crop from "models/crop";
 
 export interface IArtboard {
   selectedImageUrl: string;
 }
 
-const panes = [
-  {
-    menuItem: "Properties",
-    render: () => <Tab.Pane>Filter Props</Tab.Pane>
-  },
-  { menuItem: "Export", render: () => <Tab.Pane>Export Content</Tab.Pane> }
-];
-
-const Artboard: React.SFC<IArtboard> = ({ selectedImageUrl }) => (
+const Artboard: React.SFC<IArtboard> = ({ selectedImageUrl, filters }) => (
   <div>
     <Grid columns={3}>
       <Grid.Row>
@@ -21,11 +15,15 @@ const Artboard: React.SFC<IArtboard> = ({ selectedImageUrl }) => (
           <Header as="h3">Filters</Header>
         </Grid.Column>
         <Grid.Column>
-          <img src={selectedImageUrl} />{" "}
+          <img src={selectedImageUrl} alt="Artboard Image" />{" "}
         </Grid.Column>
         <Grid.Column width="4">
           <Header as="h3">Filters</Header>
-          <Tab panes={panes} />
+          <Form>
+            <Form.Group widths="equal">
+              <FilterProps filters={[new Crop(1, 1, true)]} />
+            </Form.Group>
+          </Form>
         </Grid.Column>
       </Grid.Row>
     </Grid>
