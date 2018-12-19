@@ -2,7 +2,7 @@
   "name": "skrop",
   "description": "Image transformation service using libvips, based on Skipper.",
   "keywords": ["image", "image-processing"],
-  "repository": "https://github.com/zalando-stups/skrop",
+  "repository": "https://github.com/jseb/skrop",
   "stack": "container",
   "image": "skrop/skrop"
 }

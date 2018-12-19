@@ -12,7 +12,7 @@ if [ "${TRAVIS_BRANCH}_${TRAVIS_PULL_REQUEST}" = "master_false" ]; then
   git config --global user.name "Travis CI"
   echo "Creating tag for version: ${NEXT_PATCH_VERSION}"
   git tag ${NEXT_PATCH_VERSION} -a -m "Generated tag from TravisCI for build ${TRAVIS_BUILD_NUMBER}"
-  git push -q --tags https://$GITHUB_AUTH@github.com/zalando-stups/skrop
+  git push -q --tags https://$GITHUB_AUTH@https://github.com/jseb/skrop
 else
   echo "Not a merge to 'master'. Don't release a new version."
 fi

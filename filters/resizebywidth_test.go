@@ -2,7 +2,7 @@ package filters
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/zalando-stups/skrop/filters/imagefiltertest"
+	"https://github.com/jseb/skrop/filters/imagefiltertest"
 	"github.com/h2non/bimg"
 	"testing"
 )

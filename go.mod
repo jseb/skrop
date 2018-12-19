@@ -1,4 +1,4 @@
-module github.com/zalando-stups/skrop
+module https://github.com/jseb/skrop
 
 require (
 	github.com/abbot/go-http-auth v0.0.0-20181006234207-98f2d47741b6

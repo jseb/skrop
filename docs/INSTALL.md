@@ -28,7 +28,7 @@ This can be set up in the BASH profile (`~/.bash_profile` or `~/.bashrc`)
 
 Get the Skrop sources:
 
-    go get github.com/zalando-stups/skrop
+    go get https://github.com/jseb/skrop
 
 
 Skrop uses [modules](https://github.com/golang/go/wiki/Modules), so make sure to have go 1.11+ and just run
@@ -57,4 +57,4 @@ docker/docker-run.sh
 
 Press here to deploy your own demo on Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zalando-stups/skrop/docker)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://https://github.com/jseb/skrop/docker)

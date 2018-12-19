@@ -9,9 +9,9 @@ ARG VERSION
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.name="Skrop" \
       org.label-schema.description="Image transformation service using libvips, based on Skipper." \
-      org.label-schema.url="https://github.com/zalando-stups/skrop" \
+      org.label-schema.url="https://https://github.com/jseb/skrop" \
       org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url="https://github.com/zalando-stups/skrop" \
+      org.label-schema.vcs-url="https://https://github.com/jseb/skrop" \
       org.label-schema.version=$VERSION \
       org.label-schema.schema-version="1.0"
 

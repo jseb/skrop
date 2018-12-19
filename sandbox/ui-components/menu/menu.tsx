@@ -20,7 +20,7 @@ const PageMenu: React.SFC<IMenu> = ({ logoSrc }) => (
         </Menu.Item>
         <Menu.Item
           as="a"
-          href="https://github.com/zalando-stups/skrop"
+          href="https://https://github.com/jseb/skrop"
           target="_blank"
         >
           <Icon name="github" size="large" link />

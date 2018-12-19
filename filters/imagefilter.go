@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"github.com/h2non/bimg"
 	log "github.com/sirupsen/logrus"
-	"github.com/zalando-stups/skrop/messages"
+	"https://github.com/jseb/skrop/messages"
 	"github.com/zalando/skipper/filters"
 	"io/ioutil"
 	"net/http"

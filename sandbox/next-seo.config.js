@@ -4,7 +4,7 @@ export default {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://github.com/zalando-stups/skrop",
+    url: "https://https://github.com/jseb/skrop",
     title: "Skrop",
     description:
       "Skrop is a media service based on Skipper and the vips library",
