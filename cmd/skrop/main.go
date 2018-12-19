@@ -3,14 +3,14 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/zalando-stups/skrop/cache"
-	skropFilters "github.com/zalando-stups/skrop/filters"
+	"github.com/jseb/skrop/cache"
+	skropFilters "github.com/jseb/skrop/filters"
 	"github.com/zalando/skipper"
 	"github.com/zalando/skipper/filters"
 	"os"
 
 	log "github.com/sirupsen/logrus"
-	"github.com/zalando-stups/skrop/dataclient"
+	"github.com/jseb/skrop/dataclient"
 	"github.com/zalando/skipper/proxy"
 	"github.com/zalando/skipper/routing"
 )
@@ -30,7 +30,7 @@ const (
 	usageHeader = `
   skrop – Skipper based media service using the vips library.
 
-  https://github.com/zalando-stups/skrop`
+  https://github.com/jseb/skrop`
 
 	addressUsage    = "network address that skrop should listen on"
 	verboseUsage    = "enable verbose logging"
