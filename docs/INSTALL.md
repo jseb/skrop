@@ -57,4 +57,4 @@ docker/docker-run.sh
 
 Press here to deploy your own demo on Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://https://github.com/jseb/skrop/docker)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jseb/skrop/docker)
