@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"https://github.com/jseb/skrop/filters/imagefiltertest"
+	"github.com/jseb/skrop/filters/imagefiltertest"
 	"github.com/h2non/bimg"
 )
 
