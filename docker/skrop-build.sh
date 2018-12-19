@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-PROJECT_DIR="/go/src/https://github.com/jseb/skrop"
+PROJECT_DIR="/go/src/github.com/jseb/skrop"
+
 
 docker pull skrop/skrop-build
 docker run -t -v $(pwd):${PROJECT_DIR} skrop/skrop-build sh -c "cd ${PROJECT_DIR} && go build ./cmd/skrop"
