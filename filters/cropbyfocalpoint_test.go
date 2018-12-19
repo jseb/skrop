@@ -3,7 +3,7 @@ package filters
 import (
 	"testing"
 	"github.com/stretchr/testify/assert"
-	"https://github.com/jseb/skrop/filters/imagefiltertest"
+	"github.com/jseb/skrop/filters/imagefiltertest"
 	"github.com/zalando/skipper/filters"
 )
 

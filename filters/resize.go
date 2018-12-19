@@ -2,7 +2,7 @@ package filters
 
 import (
 	log "github.com/sirupsen/logrus"
-	"https://github.com/jseb/skrop/parse"
+	"github.com/jseb/skrop/parse"
 	"github.com/zalando/skipper/filters"
 	"github.com/h2non/bimg"
 	"math"

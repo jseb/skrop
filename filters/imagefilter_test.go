@@ -9,7 +9,7 @@ import (
 
 	"github.com/h2non/bimg"
 	"github.com/stretchr/testify/assert"
-	"https://github.com/jseb/skrop/filters/imagefiltertest"
+	"github.com/jseb/skrop/filters/imagefiltertest"
 	"github.com/zalando/skipper/filters/filtertest"
 )
 

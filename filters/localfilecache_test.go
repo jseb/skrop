@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"https://github.com/jseb/skrop/cache"
-	"https://github.com/jseb/skrop/filters/imagefiltertest"
+	"github.com/jseb/skrop/cache"
+	"github.com/jseb/skrop/filters/imagefiltertest"
 	"github.com/zalando/skipper/filters"
 	"github.com/zalando/skipper/filters/filtertest"
 

@@ -1,7 +1,7 @@
 package filters
 
 import (
-	"https://github.com/jseb/skrop/parse"
+	"github.com/jseb/skrop/parse"
 	"github.com/zalando/skipper/filters"
 	"github.com/h2non/bimg"
 	"io/ioutil"
