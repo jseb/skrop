@@ -4,14 +4,15 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"github.com/h2non/bimg"
-	log "github.com/sirupsen/logrus"
-	"github.com/zalando-stups/skrop/messages"
-	"github.com/zalando/skipper/filters"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"strings"
+
+	"github.com/h2non/bimg"
+	log "github.com/sirupsen/logrus"
+	"github.com/zalando-stups/skrop/messages"
+	"github.com/zalando/skipper/filters"
 )
 
 const (
@@ -217,7 +218,7 @@ func transformImage(image *bimg.Image, opts *bimg.Options) ([]byte, error) {
 }
 
 func applyDefaults(o *bimg.Options) *bimg.Options {
-	if (stripMetadata) {
+	if stripMetadata {
 		o.StripMetadata = true
 	}
 	if o.Quality == 0 {

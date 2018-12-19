@@ -9,5 +9,5 @@ COPY --from=builder /build/skrop /usr/local/bin/
 COPY --from=builder /build/eskip/sample.eskip skrop.eskip
 COPY --from=builder /build/images/ images
 COPY --from=builder /build/eskip/sample.eskip skrop.eskip
-
+RUN chmod -R o+r images
 ENTRYPOINT skrop -routes-file skrop.eskip -verbose

@@ -1,10 +1,12 @@
 package filters
 
 import (
-	log "github.com/sirupsen/logrus"
+	"strconv"
+	"strings"
+
+	"github.com/h2non/bimg"
 	"github.com/zalando-stups/skrop/parse"
 	"github.com/zalando/skipper/filters"
-	"github.com/h2non/bimg"
 )
 
 // BlurName is the name of the filter
@@ -24,12 +26,21 @@ func (r *blur) Name() string {
 	return BlurName
 }
 
-func (r *blur) CreateOptions(_ *ImageFilterContext) (*bimg.Options, error) {
-	log.Debug("Create options for blurring ", r)
-
-	blur := bimg.GaussianBlur{Sigma: r.Sigma, MinAmpl: r.MinAmpl}
-
-	return &bimg.Options{GaussianBlur: blur}, nil
+func (r *blur) CreateOptions(i *ImageFilterContext) (*bimg.Options, error) {
+	defaultBlur := bimg.GaussianBlur{Sigma: r.Sigma, MinAmpl: r.MinAmpl}
+	if bp, ok := i.Parameters["blur"]; ok {
+		params := strings.Split(bp[0], ",")
+		sigma, err := strconv.ParseFloat(params[0], 64)
+		if err != nil {
+			return &bimg.Options{GaussianBlur: defaultBlur}, nil
+		}
+		minAmpl, err := strconv.ParseFloat(params[1], 64)
+		if err != nil {
+			return &bimg.Options{GaussianBlur: defaultBlur}, nil
+		}
+		return &bimg.Options{GaussianBlur: bimg.GaussianBlur{Sigma: sigma, MinAmpl: minAmpl}}, nil
+	}
+	return &bimg.Options{GaussianBlur: bimg.GaussianBlur{Sigma: r.Sigma, MinAmpl: r.MinAmpl}}, nil
 }
 
 func (r *blur) CanBeMerged(other *bimg.Options, self *bimg.Options) bool {

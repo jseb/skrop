@@ -23,7 +23,9 @@ smallCached: Path("/cached/images/S/:image")
 
 dynamic: Path("/images/dynamic/:image")
   -> modPath("^/images/dynamic", "/images")
-  -> transformByQueryParams()
+  -> finalizeResponse()
+  -> resize(100, 100)
+  -> crop(200, 200)
   -> "http://127.0.0.1:9090";
 
 smallAndSharp: Path("/images/Ss/:image")

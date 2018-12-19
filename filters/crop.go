@@ -1,10 +1,13 @@
 package filters
 
 import (
+	"strconv"
+	"strings"
+
+	"github.com/h2non/bimg"
 	log "github.com/sirupsen/logrus"
 	"github.com/zalando-stups/skrop/parse"
 	"github.com/zalando/skipper/filters"
-	"github.com/h2non/bimg"
 )
 
 // CropName is the name of the filter
@@ -25,13 +28,25 @@ func (f *crop) Name() string {
 	return CropName
 }
 
-func (f *crop) CreateOptions(_ *ImageFilterContext) (*bimg.Options, error) {
+func (f *crop) CreateOptions(i *ImageFilterContext) (*bimg.Options, error) {
 	log.Debug("Create options for crop ", f)
+	height := f.height
+	width := f.width
+	cropType := f.cropType
 
+	if bp, ok := i.Parameters["crop"]; ok {
+		params := strings.Split(bp[0], ",")
+		width, _ = strconv.Atoi(params[0])
+		height, _ = strconv.Atoi(params[1])
+		cropType = "center"
+	}
+	log.Debug("width %+v", width)
+	log.Debug("height %+v", height)
+	log.Debug("cropType %+v", cropType)
 	return &bimg.Options{
-		Width:   f.width,
-		Height:  f.height,
-		Gravity: cropTypeToGravity[f.cropType],
+		Width:   width,
+		Height:  height,
+		Gravity: cropTypeToGravity[cropType],
 		Crop:    true}, nil
 }
 

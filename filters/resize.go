@@ -1,11 +1,14 @@
 package filters
 
 import (
+	"math"
+	"strconv"
+	"strings"
+
+	"github.com/h2non/bimg"
 	log "github.com/sirupsen/logrus"
 	"github.com/zalando-stups/skrop/parse"
 	"github.com/zalando/skipper/filters"
-	"github.com/h2non/bimg"
-	"math"
 )
 
 const (
@@ -29,37 +32,46 @@ func (f *resize) Name() string {
 	return ResizeName
 }
 
-func (f *resize) CreateOptions(imageContext *ImageFilterContext) (*bimg.Options, error) {
+func (f *resize) CreateOptions(i *ImageFilterContext) (*bimg.Options, error) {
 	log.Debug("Create options for resize ", f)
-
-	if !f.keepAspectRatio {
-		return &bimg.Options{
-			Width:  f.width,
-			Height: f.height,
-			Force:  true}, nil
-	}
-
-	size, err := imageContext.Image.Size()
+	size, err := i.Image.Size()
 	if err != nil {
 		return nil, err
 	}
+	height := f.height
+	width := f.width
+	keepAspectRatio := f.keepAspectRatio
+
+	if bp, ok := i.Parameters["resize"]; ok {
+		params := strings.Split(bp[0], ",")
+		width, _ = strconv.Atoi(params[0])
+		height, _ = strconv.Atoi(params[1])
+		keepAspectRatio, _ = strconv.ParseBool(params[2])
+	}
+
+	if !keepAspectRatio {
+		return &bimg.Options{
+			Width:  width,
+			Height: height,
+			Force:  false}, nil
+	}
 
 	// calculate height keeping width
-	ht := int(math.Floor(float64(size.Height*f.width) / float64(size.Width)))
+	ht := int(math.Floor(float64(size.Height*width) / float64(size.Width)))
 
 	// if height is less or equal than desired, return transform by width
-	if ht <= f.height {
+	if ht <= height {
 		return &bimg.Options{
-			Width: f.width}, nil
+			Width: width}, nil
 	}
 	// otherwise transform by height
 	return &bimg.Options{
-		Height: f.height}, nil
+		Height: height}, nil
 
 }
 
 func (f *resize) CanBeMerged(other *bimg.Options, self *bimg.Options) bool {
-	return (other.AreaWidth == 0 && other.AreaHeight == 0 ) && ((other.Width == 0 && other.Height == 0) ||
+	return (other.AreaWidth == 0 && other.AreaHeight == 0) && ((other.Width == 0 && other.Height == 0) ||
 		(self.Width == other.Width && self.Height == other.Height))
 }
 

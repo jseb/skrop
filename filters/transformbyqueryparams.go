@@ -1,11 +1,12 @@
 package filters
 
 import (
+	"strconv"
+	"strings"
+
 	"github.com/h2non/bimg"
 	log "github.com/sirupsen/logrus"
 	"github.com/zalando/skipper/filters"
-	"strconv"
-	"strings"
 )
 
 const (
