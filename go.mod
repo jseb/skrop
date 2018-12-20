@@ -31,7 +31,7 @@ require (
 	github.com/uber/jaeger-lib v1.5.0
 	github.com/yuin/gopher-lua v0.0.0-20181008131706-f6fcaab0c612
 	github.com/zalando/skipper v0.10.126
-	github.com/jseb/skrop v.1.1.25
+	github.com/jseb/skrop v1.1.27
 	golang.org/x/crypto v0.0.0-20181015023909-0c41d7ab0a0e
 	golang.org/x/net v0.0.0-20181017193950-04a2e542c03f
 	golang.org/x/sys v0.0.0-20181019084534-8f1d3d21f81b
