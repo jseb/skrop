@@ -61,6 +61,8 @@ github.com/hashicorp/memberlist v0.1.0/go.mod h1:ncdBp14cuox2iFOq3kDiquKU6fqsTBc
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=
 github.com/instana/golang-sensor v0.0.0-20180725091122-493edb422283 h1:T5w+TmupdCG6aKHgYCIMiIbuM7Tz70H68A32Xdig7BA=
 github.com/instana/golang-sensor v0.0.0-20180725091122-493edb422283/go.mod h1:ZyC19HCVK0u4cTg7K2p1FE5Wwoj/rz5MtoEKw8Pf9LA=
+github.com/jseb/skrop v1.1.21-0.20181219154742-4b959f547c42/go.mod h1:B9tlS6oy6qYoxtWOaFT+A+e3e18+uL3T48q5GyyF/s8=
+github.com/jseb/skrop v1.1.27/go.mod h1:OnZvewfgk8cpYY3kb51ewGIliLY8Y75eo/ZTkxG2OiI=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/konsorten/go-windows-terminal-sequences v0.0.0-20180402223658-b729f2633dfe/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
