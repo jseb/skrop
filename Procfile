@@ -1,1 +1,1 @@
-web: go build ./cmd/skrop && skrop
+web: skrop
